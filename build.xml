@@ -4,23 +4,23 @@
     <property name="dist.dir" value="dist"/>
     <property name="jar.name" value="sitairiss9.jar"/>
     <property environment="env"/>
-    <property name="ANT_HOME" value="${env.ANT_HOME}"/>
+    <property name="ANT_HOME" value="C:\apache-ant"/>
 
     <target name="init">
-        <mkdir dir="${build.dir}"/>
-        <mkdir dir="${dist.dir}"/>
+        <mkdir dir="C:\sitairiss9\build"/>
+        <mkdir dir="C:\sitairiss9\dist"/>
     </target>
 
     <target name="compile" depends="init">
-        <javac srcdir="${src.dir}" destdir="${build.dir}">
+        <javac srcdir="C:\sitairiss9\scr" destdir="C:\sitairiss9\build">
             <classpath>
-                <pathelement path="${build.dir}"/>
+                <pathelement path="C:\sitairiss9\build"/>
             </classpath>
         </javac>
     </target>
 
     <target name="jar" depends="compile">
-        <jar destfile="${dist.dir}/${jar.name}" basedir="${build.dir}">
+        <jar destfile="$C:\sitairiss9\dist/sitairiss9.jar" basedir="C:\sitairiss9\build">
             <manifest>
                 <attribute name="Main-Class" value="org.sitairiss9.Main"/>
             </manifest>
@@ -28,7 +28,7 @@
     </target>
 
     <target name="clean">
-        <delete dir="${build.dir}"/>
-        <delete dir="${dist.dir}"/>
+        <delete dir="C:\sitairiss9\build"/>
+        <delete dir="C:\sitairiss9\dist"/>
     </target>
 </project>
